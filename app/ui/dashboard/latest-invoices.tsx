@@ -26,7 +26,7 @@ export default async function LatestInvoices({
                   },
                 )}
               >
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-600">
                   <Image
                     src={invoice.image_url}
                     alt={`${invoice.name}'s profile picture`}
@@ -38,7 +38,7 @@ export default async function LatestInvoices({
                     <p className="truncate text-sm font-semibold md:text-base">
                       {invoice.name}
                     </p>
-                    <p className="hidden text-sm text-gray-500 sm:block">
+                    <p className="hidden text-sm sm:block">
                       {invoice.email}
                     </p>
                   </div>
