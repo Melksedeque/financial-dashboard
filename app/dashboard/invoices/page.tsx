@@ -3,7 +3,16 @@ import { CreateInvoice } from "@/app/ui/invoices/buttons";
 import Pagination from "@/app/ui/invoices/pagination";
 import Search from "@/app/ui/search";
 
-export default function Page() {
+export default async function Page(props: {
+    searchParams?: Promise<{
+        query?: string;
+        page?: string;
+    }>;
+}) {
+    const searhParams = await props.searchParams;
+    const query = searhParams?.query || '';
+    const currentPage = Number(searhParams?.page) || 1;
+    
     return (
         <div className="w-full">
             <div className="flex w-full items-center justify-between">
